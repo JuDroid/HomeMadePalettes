@@ -1,4 +1,4 @@
-let form = document.querySelector('form');
+let form = document.querySelector('#formulario');
 let imagenPaleta = document.querySelector('#imgPaleta');
 let selectPaletas = document.querySelector('select');
 let pedidosAgendados = [];
@@ -10,30 +10,30 @@ form.addEventListener('submit', function (e) {
 
     let name = document.getElementById('nombre').value;
     let lastName = document.getElementById('apellido').value;
-    let addres = document.getElementById('direccion').value;
+    let address = document.getElementById('dir').value;
     let flavor = selectPaletas.value;
 
     let pedido = {
         name,
         lastName,
-        addres,
+        address,
         flavor
     }
 
     pedidosAgendados.unshift(pedido);
 
+    console.log(pedidosAgendados)
+
+    form.reset();
     
 })
 
-
-selectPaletas.addEventListener('change', function () {
-    imagenPaleta.style.display = 'inline';
+function mostrarImagen(value){
 
     let urlImage;
 
-
     switch (selectPaletas.value) {
-        case '1': {
+        case '1': {//if youre going to reassign the value of a variable inside a case because its going to show a block scope error, put {} between the content of the case to avoid this
             urlImage = "./Images/Mango.png";
             break;}
 
@@ -54,8 +54,16 @@ selectPaletas.addEventListener('change', function () {
         break;
     }
    
+    return urlImage;
+}
 
-    imagenPaleta.setAttribute('src', urlImage);
+selectPaletas.addEventListener('change', function () {
+    // imagenPaleta.style.display = 'inline';
+
+    let urlPaleta = mostrarImagen(selectPaletas.value)
+
 })
+
+
 
 
