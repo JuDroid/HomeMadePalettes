@@ -7,13 +7,40 @@ body {
 }
 
 #container {
-    background-color: aliceblue;
-    text-align: center;
-    border-radius: 8px;
-    width: 40%;
+    background-color: #fff; /*color de fondo*/
+    text-align: center; /*alinear los elementos hacia el centro*/
+    border-radius: 8px; /*esquinas redondeadas del contenedor*/
+    width: 40%; /*tamaño del 40% del body*/
 
 }
 
 .logo {
-    width: 40%;
+    width: 40%; /*40% del body*/
+}
+
+input, select {
+    display: block; 
+    width: 75%;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin: 15px auto;
+    padding: 5px; 
+    text-align: center;
+}
+
+.paleta {
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: 25%;
+    border-radius: 30px;
+    padding: 15px 30px;
+    border: none;
+    background-color: salmon;
+    color: #fff;
+    display: block;
+    margin: 10px auto;
 }
